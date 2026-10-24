@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0420">
+  <meta name="color-scheme" content="dark">
+  <title>Για τον αδερφό μου 🎁</title>
+  <meta name="description" content="Κάτι σε περιμένει. Άνοιξέ το.">
+
+  <!-- Link preview: deliberately vague so the chat preview does not spoil the gift. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Για τον αδερφό μου 🎁">
+  <meta property="og:description" content="Κάτι σε περιμένει. Άνοιξέ το.">
+  <meta property="og:url" content="https://batmanos.github.io/gift-scratch/">
+  <meta property="og:image" content="https://batmanos.github.io/gift-scratch/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%81%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wdth,wght@1,100..200,400..900&family=Manrope:wght@400..800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="assets/vice.jpg">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <div class="scene" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="sun"></div>
+    <div class="floor"></div>
+  </div>
+
+  <canvas class="fx" aria-hidden="true"></canvas>
+
+  <button class="mute" type="button" aria-label="Σίγαση ήχου" aria-pressed="false">
+    <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
+    <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg>
+  </button>
+
+  <main class="stage" data-state="intro">
+    <header class="top">
+      <p class="eyebrow">Για τον αδερφό μου</p>
+      <div class="swap">
+        <h1 class="title" data-when="intro scratch">Έχεις ένα δώρο</h1>
+        <h1 class="title" data-when="revealed">Χρόνια πολλά, αδερφέ!</h1>
+      </div>
+    </header>
+
+    <div class="card-wrap">
+      <div class="card-float">
+        <div class="card" role="button" tabindex="0" aria-label="Ξύσε την κάρτα για να δεις το δώρο σου">
+          <div class="prize">
+            <img src="assets/vice.jpg" alt="Vice City στο ηλιοβασίλεμα" width="1168" height="784" draggable="false">
+            <div class="prize-label">
+              <span class="prize-eyebrow">Το δώρο σου</span>
+              <span class="prize-title">GTA VI</span>
+            </div>
+          </div>
+          <canvas class="foil"></canvas>
+          <div class="glare"></div>
+          <div class="swipe-hint"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bottom swap">
+      <div class="panel" data-when="intro">
+        <button class="cta" type="button" id="open">Άνοιξέ το</button>
+        <p class="from">από τον <strong>batmanos</strong></p>
+      </div>
+
+      <div class="panel" data-when="scratch">
+        <p class="hint">Ξύσε την κάρτα με το δάχτυλο</p>
+      </div>
+
+      <div class="panel" data-when="revealed">
+        <p class="gift">Το <strong>GTA VI</strong> είναι δικό σου.<small>Θα σου το δώσω από κοντά.</small></p>
+        <div class="countdown">
+          <p class="countdown-label">
+            <span class="when-waiting">Τα γενέθλιά σου ξεκινούν σε</span>
+            <span class="when-birthday">Είναι τα γενέθλιά σου!</span>
+          </p>
+          <p class="countdown-time" role="timer"><span data-unit="h">00</span><b>:</b><span data-unit="m">00</span><b>:</b><span data-unit="s">00</span></p>
+        </div>
+        <p class="from">από τον <strong>batmanos</strong></p>
+        <button class="ghost" type="button" id="replay">Ξανά από την αρχή</button>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
